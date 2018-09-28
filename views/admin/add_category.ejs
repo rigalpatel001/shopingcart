@@ -1,0 +1,25 @@
+<%- include('../_layouts/adminheader') %>
+
+<h2 class="page-title"><% if(update) { %> Edit <% } else { %> Add <% } %> a Category</h2>
+<a href="/admin/categories" class="btn btn-primary">Back to all Categories</a>
+<br><br>
+
+
+<form method="post" action="<% if(update) { %>/admin/categories/edit-category/<%=slug %><% } else {%>/admin/categories/add-category<% } %>">
+    
+    <div class="form-group">
+        <label for="">Title</label>
+        <input type="text" class="form-control" name="title" value="<%= title %>" placeholder="Title">
+    </div>
+    
+    <div class="form-group">
+        <label for="">Slug</label>
+        <input type="text" class="form-control" name="slug" value="<%= slug %>" placeholder="Slug">
+    </div>
+    <% if(update) { %>
+     <input type="hidden" name="id" value="<%= id %>">
+    <% } %>
+    <button class="btn btn-default">Submit</button>
+</form>
+
+<%- include('../_layouts/adminfooter') %>
