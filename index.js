@@ -131,7 +131,9 @@ app.use('/',pages);
 
 app.locals.errors = null;
 
-mongoose.connect('mongodb://localhost/shoppingcart')
+
+//mongoose.connect('mongodb://localhost/shoppingcart')
+mongoose.connect('mongodb://nshoping:admin@123@ds054289.mlab.com:54289/n_shopingcart')
 .then(()=> console.log('conncted to Mongodb...'))
 .catch(err => console.error('Could not conncet to mongodb....'));
 
