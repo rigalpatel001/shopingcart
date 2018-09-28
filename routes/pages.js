@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
 
         res.render('index', {
             title: "Home",
-            content: page.content
+            content: "test"
         });
     });
     
